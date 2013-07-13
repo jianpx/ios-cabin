@@ -9,7 +9,7 @@ my collection of ios utils.
 * Import: It is not a real system protogenetic(原生的) UIScrollView, in fact it is a UIView that contains UIScrollView and UIPageControl.
 * requirement: iOS >= 5.0
 
-# PagedImageScrollView Usaeg:
+# PagedImageScrollView Usage:
 after importing "PagedImageScrollView.h",  place this code in ViewDidLoad method of your viewcontroller.
 
     PagedImageScrollView *pageScrollView = [[PagedImageScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];

@@ -14,7 +14,7 @@
 * iOS >= 5.0
 
 
-# Usaeg:
+# Usage:
 after import "PagedImageScrollView.h",  place this code in ViewDidLoad method of your viewcontroller.
 
     PagedImageScrollView *pageScrollView = [[PagedImageScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];
