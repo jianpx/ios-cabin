@@ -1,5 +1,7 @@
 //
 //  PagedImageScrollView.m
+//  Test
+//
 //  Created by jianpx on 7/11/13.
 //  Copyright (c) 2013 PS. All rights reserved.
 //
@@ -14,16 +16,14 @@
 
 
 #define PAGECONTROL_DOT_WIDTH 20
-#define PAGECONTROL_HEIGHT 36
+#define PAGECONTROL_HEIGHT 20
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
         self.pageControl = [[UIPageControl alloc] init];
-        self.pageControlIsChangingPage = NO;
         [self setDefaults];
         [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
         [self addSubview:self.scrollView];
@@ -34,23 +34,32 @@
 }
 
 
+- (void)setPageControlPos:(enum PageControlPosition)pageControlPos
+{
+    CGFloat width = PAGECONTROL_DOT_WIDTH * self.pageControl.numberOfPages;
+    _pageControlPos = pageControlPos;
+    if (pageControlPos == PageControlPositionRightCorner)
+    {
+        self.pageControl.frame = CGRectMake(self.scrollView.frame.size.width - width, self.scrollView.frame.size.height - PAGECONTROL_HEIGHT, width, PAGECONTROL_HEIGHT);
+    }else if (pageControlPos == PageControlPositionCenterBottom)
+    {
+        self.pageControl.frame = CGRectMake((self.scrollView.frame.size.width - width) / 2, self.scrollView.frame.size.height - PAGECONTROL_HEIGHT, width, PAGECONTROL_HEIGHT);
+    }else if (pageControlPos == PageControlPositionLeftCorner)
+    {
+        self.pageControl.frame = CGRectMake(0, self.scrollView.frame.size.height - PAGECONTROL_HEIGHT, width, PAGECONTROL_HEIGHT);
+    }
+}
+
 - (void)setDefaults
 {
     self.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    self.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     self.pageControl.hidesForSinglePage = YES;
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.pageControlPos = PageControlPositionCenterBottom;
 }
 
-
-- (void)setPageControlFrame: (NSInteger)numberOfPages
-{
-    CGFloat width = PAGECONTROL_DOT_WIDTH * numberOfPages;
-    //set to right corner.
-    self.pageControl.frame = CGRectMake(self.scrollView.frame.size.width - width, self.scrollView.frame.size.height - PAGECONTROL_HEIGHT, width, PAGECONTROL_HEIGHT);
-}
 
 - (void)setScrollViewContents: (NSArray *)images
 {
@@ -62,7 +71,6 @@
         self.pageControl.numberOfPages = 0;
         return;
     }
-    //important to set contentSize otherwise will not scroll!
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * images.count, self.scrollView.frame.size.height);
     for (int i = 0; i < images.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.scrollView.frame.size.width * i, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height)];
@@ -70,7 +78,8 @@
         [self.scrollView addSubview:imageView];
     }
     self.pageControl.numberOfPages = images.count;
-    [self setPageControlFrame:self.pageControl.numberOfPages];
+    //call pagecontrolpos setter.
+    self.pageControlPos = self.pageControlPos;
 }
 
 - (void)changePage:(UIPageControl *)sender
@@ -79,11 +88,7 @@
     frame.origin.x = frame.size.width * self.pageControl.currentPage;
     frame.origin.y = 0;
     frame.size = self.scrollView.frame.size;
-    //scrollRectToVisible will fire scrollViewDidEndDecelerating event.
     [self.scrollView scrollRectToVisible:frame animated:YES];
-	/*
-	 *	When the animated scrolling finishings, scrollViewDidEndDecelerating will turn this off
-	 */
     self.pageControlIsChangingPage = YES;
 }
 
@@ -100,7 +105,6 @@
     self.pageControl.currentPage = page;
 }
 
-//optimize steps
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     self.pageControlIsChangingPage = NO;
