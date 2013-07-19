@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50DB3B921797E2AC005DE60D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB3B911797E2AC005DE60D /* UIKit.framework */; };
+		50DB3B941797E2AC005DE60D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB3B931797E2AC005DE60D /* Foundation.framework */; };
+		50DB3B961797E2AC005DE60D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB3B951797E2AC005DE60D /* CoreGraphics.framework */; };
+		50DB3B9C1797E2AC005DE60D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50DB3B9A1797E2AC005DE60D /* InfoPlist.strings */; };
+		50DB3B9E1797E2AC005DE60D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DB3B9D1797E2AC005DE60D /* main.m */; };
+		50DB3BA21797E2AC005DE60D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DB3BA11797E2AC005DE60D /* AppDelegate.m */; };
+		50DB3BA41797E2AC005DE60D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DB3BA31797E2AC005DE60D /* Default.png */; };
+		50DB3BA61797E2AC005DE60D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DB3BA51797E2AC005DE60D /* Default@2x.png */; };
+		50DB3BA81797E2AC005DE60D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DB3BA71797E2AC005DE60D /* Default-568h@2x.png */; };
+		50DB3BAB1797E2AC005DE60D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB3BA91797E2AC005DE60D /* MainStoryboard.storyboard */; };
+		50DB3BAE1797E2AC005DE60D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DB3BAD1797E2AC005DE60D /* ViewController.m */; };
+		50DB3BB61797E2CC005DE60D /* JXBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DB3BB51797E2CC005DE60D /* JXBarChartView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50DB3B8E1797E2AC005DE60D /* JXBarChartViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXBarChartViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DB3B911797E2AC005DE60D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		50DB3B931797E2AC005DE60D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50DB3B951797E2AC005DE60D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50DB3B991797E2AC005DE60D /* JXBarChartViewExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JXBarChartViewExample-Info.plist"; sourceTree = "<group>"; };
+		50DB3B9B1797E2AC005DE60D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50DB3B9D1797E2AC005DE60D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50DB3B9F1797E2AC005DE60D /* JXBarChartViewExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JXBarChartViewExample-Prefix.pch"; sourceTree = "<group>"; };
+		50DB3BA01797E2AC005DE60D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		50DB3BA11797E2AC005DE60D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		50DB3BA31797E2AC005DE60D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		50DB3BA51797E2AC005DE60D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		50DB3BA71797E2AC005DE60D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		50DB3BAA1797E2AC005DE60D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		50DB3BAC1797E2AC005DE60D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		50DB3BAD1797E2AC005DE60D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		50DB3BB41797E2CC005DE60D /* JXBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JXBarChartView.h; path = ../JXBarChartView.h; sourceTree = "<group>"; };
+		50DB3BB51797E2CC005DE60D /* JXBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JXBarChartView.m; path = ../JXBarChartView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50DB3B8B1797E2AC005DE60D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DB3B921797E2AC005DE60D /* UIKit.framework in Frameworks */,
+				50DB3B941797E2AC005DE60D /* Foundation.framework in Frameworks */,
+				50DB3B961797E2AC005DE60D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50DB3B851797E2AC005DE60D = {
+			isa = PBXGroup;
+			children = (
+				50DB3B971797E2AC005DE60D /* JXBarChartViewExample */,
+				50DB3B901797E2AC005DE60D /* Frameworks */,
+				50DB3B8F1797E2AC005DE60D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50DB3B8F1797E2AC005DE60D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50DB3B8E1797E2AC005DE60D /* JXBarChartViewExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50DB3B901797E2AC005DE60D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50DB3B911797E2AC005DE60D /* UIKit.framework */,
+				50DB3B931797E2AC005DE60D /* Foundation.framework */,
+				50DB3B951797E2AC005DE60D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50DB3B971797E2AC005DE60D /* JXBarChartViewExample */ = {
+			isa = PBXGroup;
+			children = (
+				50DB3BB41797E2CC005DE60D /* JXBarChartView.h */,
+				50DB3BB51797E2CC005DE60D /* JXBarChartView.m */,
+				50DB3BA01797E2AC005DE60D /* AppDelegate.h */,
+				50DB3BA11797E2AC005DE60D /* AppDelegate.m */,
+				50DB3BA91797E2AC005DE60D /* MainStoryboard.storyboard */,
+				50DB3BAC1797E2AC005DE60D /* ViewController.h */,
+				50DB3BAD1797E2AC005DE60D /* ViewController.m */,
+				50DB3B981797E2AC005DE60D /* Supporting Files */,
+			);
+			path = JXBarChartViewExample;
+			sourceTree = "<group>";
+		};
+		50DB3B981797E2AC005DE60D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50DB3B991797E2AC005DE60D /* JXBarChartViewExample-Info.plist */,
+				50DB3B9A1797E2AC005DE60D /* InfoPlist.strings */,
+				50DB3B9D1797E2AC005DE60D /* main.m */,
+				50DB3B9F1797E2AC005DE60D /* JXBarChartViewExample-Prefix.pch */,
+				50DB3BA31797E2AC005DE60D /* Default.png */,
+				50DB3BA51797E2AC005DE60D /* Default@2x.png */,
+				50DB3BA71797E2AC005DE60D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50DB3B8D1797E2AC005DE60D /* JXBarChartViewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DB3BB11797E2AC005DE60D /* Build configuration list for PBXNativeTarget "JXBarChartViewExample" */;
+			buildPhases = (
+				50DB3B8A1797E2AC005DE60D /* Sources */,
+				50DB3B8B1797E2AC005DE60D /* Frameworks */,
+				50DB3B8C1797E2AC005DE60D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JXBarChartViewExample;
+			productName = JXBarChartViewExample;
+			productReference = 50DB3B8E1797E2AC005DE60D /* JXBarChartViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50DB3B861797E2AC005DE60D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = PS;
+			};
+			buildConfigurationList = 50DB3B891797E2AC005DE60D /* Build configuration list for PBXProject "JXBarChartViewExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50DB3B851797E2AC005DE60D;
+			productRefGroup = 50DB3B8F1797E2AC005DE60D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50DB3B8D1797E2AC005DE60D /* JXBarChartViewExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50DB3B8C1797E2AC005DE60D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DB3B9C1797E2AC005DE60D /* InfoPlist.strings in Resources */,
+				50DB3BA41797E2AC005DE60D /* Default.png in Resources */,
+				50DB3BA61797E2AC005DE60D /* Default@2x.png in Resources */,
+				50DB3BA81797E2AC005DE60D /* Default-568h@2x.png in Resources */,
+				50DB3BAB1797E2AC005DE60D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50DB3B8A1797E2AC005DE60D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DB3B9E1797E2AC005DE60D /* main.m in Sources */,
+				50DB3BA21797E2AC005DE60D /* AppDelegate.m in Sources */,
+				50DB3BAE1797E2AC005DE60D /* ViewController.m in Sources */,
+				50DB3BB61797E2CC005DE60D /* JXBarChartView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50DB3B9A1797E2AC005DE60D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50DB3B9B1797E2AC005DE60D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		50DB3BA91797E2AC005DE60D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50DB3BAA1797E2AC005DE60D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50DB3BAF1797E2AC005DE60D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50DB3BB01797E2AC005DE60D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50DB3BB21797E2AC005DE60D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JXBarChartViewExample/JXBarChartViewExample-Prefix.pch";
+				INFOPLIST_FILE = "JXBarChartViewExample/JXBarChartViewExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		50DB3BB31797E2AC005DE60D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JXBarChartViewExample/JXBarChartViewExample-Prefix.pch";
+				INFOPLIST_FILE = "JXBarChartViewExample/JXBarChartViewExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50DB3B891797E2AC005DE60D /* Build configuration list for PBXProject "JXBarChartViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DB3BAF1797E2AC005DE60D /* Debug */,
+				50DB3BB01797E2AC005DE60D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DB3BB11797E2AC005DE60D /* Build configuration list for PBXNativeTarget "JXBarChartViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DB3BB21797E2AC005DE60D /* Debug */,
+				50DB3BB31797E2AC005DE60D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50DB3B861797E2AC005DE60D /* Project object */;
+}
