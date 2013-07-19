@@ -4,7 +4,7 @@
 * using iOS core graphics
 
 # ScreenShot
-![BarChartView Image](https://www.dropbox.com/s/yj2alwwlxizhsnr/barchart.png "BarChartView Image")
+![BarChartView Image](http://vip.tu265.com/Public/images/1.jpg "BarChartView Image")
 
 # Requirement
 * iOS >= 5.0
