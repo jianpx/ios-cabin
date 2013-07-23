@@ -15,6 +15,14 @@
 @end
 
 @implementation JXBarChartView
+@synthesize values = _values;
+@synthesize maxValue = _maxValue;
+@synthesize textIndicators = _textIndicators;
+@synthesize textColor = _textColor;
+@synthesize barHeight = _barHeight;
+@synthesize barMaxWidth = _barMaxWidth;
+@synthesize startPoint = _startPoint;
+@synthesize gradient = _gradient;
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -60,7 +68,6 @@
     label.textColor = self.textColor;
     [label setTextAlignment:NSTextAlignmentLeft];
     label.adjustsFontSizeToFitWidth = YES;
-    label.adjustsLetterSpacingToFitWidth = YES;
     label.backgroundColor = [UIColor clearColor];
 }
 
