@@ -46,17 +46,22 @@
         _textColor = textColor ? textColor : [UIColor orangeColor];
         _barHeight = barHeight;
         _barMaxWidth = barMaxWidth;
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        //blue gradient
-        CGFloat locations[] = {0.0, 0.5, 1.0};
-        CGFloat colorComponents[] = {
-            0.254, 0.599, 0.82, 1.0, //red, green, blue, alpha
-            0.192, 0.525, 0.75, 1.0,
-            0.096, 0.415, 0.686, 1.0
-        };
-        size_t count = 3;
-        CGGradientRef defaultGradient = CGGradientCreateWithColorComponents(colorSpace, colorComponents, locations, count);
-        _gradient = gradient ?  gradient : defaultGradient;
+        if (gradient) {
+            _gradient = gradient;
+        } else {
+            CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+            //blue gradient
+            CGFloat locations[] = {0.0, 0.5, 1.0};
+            CGFloat colorComponents[] = {
+                0.254, 0.599, 0.82, 1.0, //red, green, blue, alpha
+                0.192, 0.525, 0.75, 1.0,
+                0.096, 0.415, 0.686, 1.0
+            };
+            size_t count = 3;
+            CGGradientRef defaultGradient = CGGradientCreateWithColorComponents(colorSpace, colorComponents, locations, count);
+            _gradient = defaultGradient;
+            CGColorSpaceRelease(colorSpace);
+        }
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
