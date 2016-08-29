@@ -40,6 +40,7 @@ after import "JXBarChartView.h",  place this code in ViewDidLoad method of your 
     [self.view addSubview:barChartView];
 
 # RouteTableManager
+* flaw: destination property can not display netmask, for example, ```netstat -r``` sometimes would display ```10.1.1/32```. If you have good idea to implement the netmask, please let me know and send me a pull request.
 * sources files are:RouteTableManager.h/m and RouteRecord.h/m
 * import "RouteTableManager.h"
 * ```[RouteTableManager getAllRoutes]``` to get all routes, every route record's property is in RouteRecord.h
