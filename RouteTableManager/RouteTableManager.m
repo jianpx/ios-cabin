@@ -1,7 +1,6 @@
 
 //
 //  RouteTableManager.m
-//  Demo
 //
 //  Created by jianpx on 8/26/16.
 //  Copyright © 2016 . All rights reserved.
@@ -60,7 +59,11 @@
         return nil;
     }
 
-    buf = malloc(len);
+    if ((buf = malloc(len)) == 0) {
+        NSLog(@"malloc %ld buffer error", (long)len);
+        return nil;
+    };
+
     if (buf && sysctl(mib, mibSize, buf, &len, NULL, 0) == 0)
     {
         //逐个rtm_msglen的长度移动，来读取每条路由记录
@@ -71,6 +74,7 @@
             struct sockaddr* dst_sa = (struct sockaddr *)(rtm + 1);
             if(rtm->rtm_addrs & RTA_DST)
             {
+            	//Don't print protocol-cloned routes unless -a.
                 if(dst_sa->sa_family == AF_INET && !((rtm->rtm_flags & RTF_WASCLONED) && (rtm->rtm_parentflags & RTF_PRCLONING)))
                 {
                     route = [[RouteRecord alloc] initWithRtm:rtm];
@@ -91,7 +95,7 @@
 
 + (NSString *)formatRouteTable {
     NSArray<RouteRecord *> *routes = [RouteTableManager getAllRoutes];
-    NSMutableString *format = [[NSMutableString alloc] init];
+    NSMutableString *format = [[NSMutableString alloc] initWithFormat:@"%ld records\n", (long)routes.count];
     NSArray *headers = @[@"Destination", @"Gateway", @"Flags", @"Refs", @"Use", @"Mtu", @"Netif", @"Expire"];
     NSMutableArray<NSNumber *> *dstArray = [@[] mutableCopy];
     NSMutableArray<NSNumber *> *gatewayArray = [@[] mutableCopy];

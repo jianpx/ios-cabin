@@ -1,6 +1,5 @@
 //
 //  RouteRecord.h
-//  Demo
 //
 //  Created by jianpx on 8/26/16.
 //  Copyright © 2016 . All rights reserved.
@@ -20,7 +19,6 @@
 @interface RouteRecord : NSObject
 @property (copy, nonatomic) NSString *destination;
 @property (copy, nonatomic) NSString *gateway;
-@property (copy, nonatomic) NSString *netmask;
 @property (copy, nonatomic) NSString *flags;
 @property (assign, nonatomic) NSInteger refs;
 @property (assign, nonatomic) NSInteger mtu;
