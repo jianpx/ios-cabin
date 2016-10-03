@@ -17,6 +17,7 @@
 
 #define PAGECONTROL_DOT_WIDTH 20
 #define PAGECONTROL_HEIGHT 20
+#define PAGECONTROL_TIMER_INTERVAL 3.0
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,6 +34,31 @@
     return self;
 }
 
+- (void)setAutoplayTimeInterval:(NSTimeInterval)seconds
+{
+    if (!seconds)
+        seconds =  PAGECONTROL_TIMER_INTERVAL;
+    
+    NSTimer *timer;
+    timer = [NSTimer scheduledTimerWithTimeInterval: seconds
+                                             target: self
+                                           selector: @selector(handleTimer)
+                                           userInfo: nil
+                                            repeats: YES];
+}
+
+- (void)handleTimer
+{
+    if (_pageControl.currentPage == _pageControl.numberOfPages-1)
+    {
+        _pageControl.currentPage = 0;
+    }else
+    {
+        _pageControl.currentPage = _pageControl.currentPage + 1;
+    }
+    
+    [self changePage:self.pageControl];
+}
 
 - (void)setPageControlPos:(enum PageControlPosition)pageControlPos
 {
